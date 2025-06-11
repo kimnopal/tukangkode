@@ -1,0 +1,36 @@
+---
+import Social from "./Social.astro";
+import GitHubIcon from "../assets/icons/github.svg";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
+import InstagramIcon from "../assets/icons/instagram.svg";
+import MailIcon from "../assets/icons/mail.svg";
+
+const socials = [
+  {
+    icon: GitHubIcon,
+    url: "/",
+  },
+  {
+    icon: LinkedInIcon,
+    url: "/",
+  },
+  {
+    icon: InstagramIcon,
+    url: "/",
+  },
+  {
+    icon: MailIcon,
+    url: "/",
+  },
+];
+---
+
+<div class="mt-6 flex gap-5">
+  {
+    socials.map((social) => (
+      <Social url={social.url}>
+        <social.icon />
+      </Social>
+    ))
+  }
+</div>

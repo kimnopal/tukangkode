@@ -1,16 +1,70 @@
 ---
+import Heading from "../components/Heading.astro";
+import PostCard from "../components/PostCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+const title = "Home";
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+);
+
+const latestPosts = allPosts.sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.publishedDate).getTime() -
+    new Date(a.frontmatter.publishedDate).getTime()
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={title}>
+  <section class="space-y-6">
+    <Heading level={1}
+      >Tulisan <a href="/about" class="underline">Saya</a> ✍</Heading
+    >
+    <p class="text-muted-foreground text-lg leading-relaxed">
+      Tempat <em>yapping</em> tentang apa yang saya pelajari dan arsip pengalaman
+      yang saya lalui. Mari berkenalan lebih dekat dengan <a
+        href="/about"
+        class="underline text-destructive">saya</a
+      > 🙌.
+    </p>
+  </section>
+
+  <section class="grid grid-cols-1 gap-6">
+    {
+      latestPosts.map((post: any) => (
+        <PostCard
+          title={post.frontmatter.title}
+          summary={post.frontmatter.summary}
+          url={`/posts/${post.frontmatter.slug}`}
+          publishedDate={post.frontmatter.publishedDate}
+          category={post.frontmatter.category}
+        />
+      ))
+    }
+  </section>
+
+  <!-- <section>
+    <Heading level={2}>✍ Tulisan Saya</Heading>
+    <div class="mt-6 grid gap-6 grid-cols-1">
+      {
+        latestPosts.map((post: any) => (
+          <PostCard
+            title={post.frontmatter.title}
+            summary={post.frontmatter.summary}
+            url={`/posts/${post.frontmatter.slug}`}
+            publishedDate={post.frontmatter.publishedDate}
+            tags={post.frontmatter.tags}
+          />
+        ))
+      }
+    </div>
+
+    <div class="mt-8 text-center">
+      <a
+        href="/posts"
+        class="text-muted-foreground hover:text-foreground transition md:text-lg font-medium w-fit underline"
+        >Mau baca yang lain? 📚
+      </a>
+    </div>
+  </section> -->
+</BaseLayout>

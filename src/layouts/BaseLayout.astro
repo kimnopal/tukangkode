@@ -1,0 +1,37 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - TukangKode</title>
+
+    <script is:inline>
+      // This script runs immediately, before the page renders
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const html = document.documentElement;
+
+        if (savedTheme === "dark") {
+          html.classList.add("dark");
+        } else if (savedTheme === "light") {
+          html.classList.remove("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body class="leading-relaxed text-foreground bg-card">
+    <Header />
+    <main class="container space-y-14">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

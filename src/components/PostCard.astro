@@ -1,0 +1,39 @@
+---
+const { title, summary, url, publishedDate, category } = Astro.props;
+---
+
+<article
+  class="bg-card border border-border rounded-[0.65rem] p-5 md:p-8 transition-all duration-200 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:border-ring"
+>
+  <a href={url} class="block no-underline">
+    <!-- Post Meta -->
+    <div
+      class="flex items-center gap-4 mb-4 text-muted-foreground text-sm flex-wrap"
+    >
+      <span class="flex items-center gap-2">
+        📅 {publishedDate}
+      </span>
+      <span
+        class="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium"
+      >
+        {category}
+      </span>
+    </div>
+
+    <!-- Post Title -->
+    <h3
+      class="text-xl font-semibold text-card-foreground mb-3 leading-snug hover:text-primary transition-colors duration-200"
+    >
+      {title}
+    </h3>
+    <!-- Post Excerpt -->
+    <p class="text-muted-foreground leading-relaxed mb-3">
+      {summary}
+    </p>
+
+    <!-- Read More -->
+    <span class="text-destructive font-medium text-sm hover:underline">
+      Baca disini →
+    </span>
+  </a>
+</article>

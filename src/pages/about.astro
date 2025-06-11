@@ -1,0 +1,56 @@
+---
+import Heading from "../components/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <a
+    href="/"
+    class="inline-flex items-center gap-2 transition mt-0 mb-10 text-muted-foreground hover:text-foreground underline"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"></path>
+    </svg>
+    Kembali membaca 📚</a
+  >
+
+  <section class="space-y-6">
+    <div>
+      <Heading level={1} class="text-3xl font-bold mb-2">Naufal Hakim</Heading>
+      <p class="text-xl text-foreground">Software Engineer 👨‍💻 & Story Teller</p>
+    </div>
+    <p class="text-muted-foreground text-lg leading-relaxed">
+      Halo dunia! 👋, Saya Naufal seorang <em><b>Software Engineer</b></em> yang
+      berasal dari Purbalingga. Saya tertarik pada bidang <em><b>Backend</b></em
+      > dan tidak suka <em><b>CSS</b></em>. Selain ngoding, saya juga gemar
+      menonton film dan bermain musik.
+    </p>
+    <div class="space-y-1">
+      <span class="text-muted-foreground text-lg inline-block">
+        Mari berkenalan, kamu bisa menghubungi saya melalui kontak dibawah 👇.
+      </span>
+      <ul
+        class="text-muted-foreground text-lg list-inside list-disc leading-relaxed"
+      >
+        <li>
+          Github: <a href="/" class="underline font-medium">@kimnopal</a>
+        </li>
+        <li>
+          Instagram: <a href="/" class="underline font-medium">@falll.hkm</a>
+        </li>
+        <li>
+          LinkedIn: <a href="/" class="underline font-medium">nopal-hakim</a>
+        </li>
+        <li>
+          Email: <a href="/" class="underline font-medium"
+            >naufalhakim366@gmail.com</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
