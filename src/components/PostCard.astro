@@ -3,18 +3,18 @@ const { title, summary, url, publishedDate, category } = Astro.props;
 ---
 
 <article
-  class="bg-card border border-border rounded-[0.65rem] p-5 md:p-8 transition-all duration-200 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:border-ring"
+  class="bg-card border-border hover:border-ring cursor-pointer rounded-[0.65rem] border p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 md:p-8"
 >
   <a href={url} class="block no-underline">
     <!-- Post Meta -->
     <div
-      class="flex items-center gap-4 mb-4 text-muted-foreground text-sm flex-wrap"
+      class="text-muted-foreground mb-4 flex flex-wrap items-center gap-4 text-sm"
     >
       <span class="flex items-center gap-2">
         📅 {publishedDate}
       </span>
       <span
-        class="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-medium"
+        class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs font-medium"
       >
         {category}
       </span>
@@ -22,17 +22,17 @@ const { title, summary, url, publishedDate, category } = Astro.props;
 
     <!-- Post Title -->
     <h3
-      class="text-xl font-semibold text-card-foreground mb-3 leading-snug hover:text-primary transition-colors duration-200"
+      class="text-card-foreground hover:text-primary mb-3 text-xl leading-snug font-semibold transition-colors duration-200"
     >
       {title}
     </h3>
     <!-- Post Excerpt -->
-    <p class="text-muted-foreground leading-relaxed mb-3">
+    <p class="text-muted-foreground mb-3 leading-relaxed">
       {summary}
     </p>
 
     <!-- Read More -->
-    <span class="text-destructive font-medium text-sm hover:underline">
+    <span class="text-destructive text-sm font-medium hover:underline">
       Baca disini →
     </span>
   </a>

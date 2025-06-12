@@ -7,25 +7,25 @@ const menus = [
 ---
 
 <!-- Navigation Bar -->
-<nav class="bg-card py-4 sticky top-0 z-50 backdrop-blur-sm">
-  <div class="max-w-[800px] mx-auto px-5">
-    <div class="flex justify-between items-center">
+<nav class="bg-card sticky top-0 z-50 py-4 backdrop-blur-sm">
+  <div class="mx-auto max-w-[800px] px-5">
+    <div class="flex items-center justify-between">
       <!-- Logo -->
       <a
         href="/"
-        class="text-2xl font-bold text-foreground no-underline hover:text-primary transition-colors duration-200"
+        class="text-foreground hover:text-primary text-2xl font-bold no-underline transition-colors duration-200"
       >
         TukangKode
       </a>
 
       <!-- Desktop Navigation Links -->
-      <ul class="flex gap-8 list-none m-0 p-0">
+      <ul class="m-0 flex list-none gap-8 p-0">
         {
           menus.map((menu: any) => (
             <li>
               <a
                 href={menu.url}
-                class={`no-underline font-medium hover:text-foreground transition-colors duration-200 ${menu.url === Astro.url.pathname ? "text-foreground" : "text-muted-foreground"}`}
+                class={`hover:text-foreground font-medium no-underline transition-colors duration-200 ${menu.url === Astro.url.pathname ? "text-foreground" : "text-muted-foreground"}`}
               >
                 {menu.name}
               </a>
@@ -38,14 +38,14 @@ const menus = [
       <div class="flex items-center gap-4">
         <!-- Dark Mode Toggle -->
         <button
-          class="text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-pointer"
+          class="text-muted-foreground hover:text-foreground cursor-pointer transition-colors duration-200"
           id="dark-mode-toggle"
           title="Toggle dark mode"
         >
           <!-- Sun icon - shown in dark mode -->
           <svg
             id="sun-icon"
-            class="w-5 h-5 hidden"
+            class="hidden h-5 w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -60,7 +60,7 @@ const menus = [
           <!-- Moon icon - shown in light mode -->
           <svg
             id="moon-icon"
-            class="w-5 h-5 block"
+            class="block h-5 w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

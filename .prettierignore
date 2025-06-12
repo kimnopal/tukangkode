@@ -1,0 +1,9 @@
+dist/
+node_modules/
+.astro/
+public/
+.gitignore
+.git/
+.github/
+.vscode/
+.DS_Store
