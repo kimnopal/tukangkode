@@ -23,7 +23,7 @@ const { frontmatter } = Astro.props;
 
   <article class="rounded-[var(--radius)]">
     <!-- Post Meta -->
-    <div class="mb-8">
+    <div>
       <div
         class="text-muted-foreground mb-6 flex flex-wrap items-center gap-4 text-sm"
       >
@@ -66,7 +66,7 @@ const { frontmatter } = Astro.props;
 
     <!-- Post Content -->
     <div
-      class="prose prose-p:text-muted-foreground prose-headings:text-foreground prose-code:text-primary prose-li:text-muted-foreground prose-strong:text-muted-foreground prose-pre:rounded-[0.65rem] text-foreground max-w-none space-y-6 leading-relaxed"
+      class="prose prose-p:text-muted-foreground prose-headings:text-foreground prose-headings:mb-2 prose-code:text-primary prose-li:text-muted-foreground prose-a:text-destructive prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-pre:rounded-[0.65rem] text-foreground prose-strong:text-foreground max-w-none space-y-6 leading-relaxed"
     >
       <slot />
     </div>
@@ -74,9 +74,12 @@ const { frontmatter } = Astro.props;
     <!-- Post Footer -->
     <div class="border-border mt-12 border-t pt-10">
       <div class="mb-6">
-        <h4 class="text-muted-foreground mb-3 text-center text-lg font-medium">
+        <Heading
+          level={4}
+          className="text-muted-foreground text-center font-medium"
+        >
           Terimakasih sudah membaca! 😃
-        </h4>
+        </Heading>
       </div>
 
       <div class="flex justify-center">

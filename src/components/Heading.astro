@@ -1,22 +1,22 @@
 ---
-const { level } = Astro.props;
+const { level, className } = Astro.props;
 ---
 
 {
   level === 1 ? (
-    <h1 class="text-foreground mb-2 text-3xl font-bold">
+    <h1 class={`text-foreground mb-2 text-3xl font-bold ${className}`}>
       <slot />
     </h1>
   ) : level === 2 ? (
-    <h2 class="text-foreground mb-2 text-2xl font-bold">
+    <h2 class={`text-foreground mb-2 text-2xl font-bold ${className}`}>
       <slot />
     </h2>
   ) : level === 3 ? (
-    <h3 class="text-foreground mb-2 text-xl font-bold">
+    <h3 class={`text-foreground mb-2 text-xl font-bold ${className}`}>
       <slot />
     </h3>
   ) : (
-    <h4 class="text-foreground mb-2 text-lg font-bold">
+    <h4 class={`text-foreground mb-2 text-lg font-bold ${className}`}>
       <slot />
     </h4>
   )
